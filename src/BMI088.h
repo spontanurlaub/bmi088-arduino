@@ -233,7 +233,7 @@ class Bmi088Gyro {
     };
     Bmi088Gyro(TwoWire &bus,uint8_t address);
     Bmi088Gyro(SPIClass &bus,uint8_t csPin);
-    int begin();
+    int begin(Bmi088Gyro::Range range = RANGE_2000DPS, Bmi088Gyro::Odr odr = ODR_2000HZ_BW_532HZ);
     bool setOdr(Odr odr);
     bool setRange(Range range);
     bool pinModeInt3(PinMode mode, PinLevel level);

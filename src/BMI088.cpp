@@ -1217,7 +1217,7 @@ Bmi088Gyro::Bmi088Gyro(SPIClass &bus,uint8_t csPin)
 }
 
 /* begins communication with the BMI088 gyro */
-int Bmi088Gyro::begin()
+int Bmi088Gyro::begin(Bmi088Gyro::Range range, Bmi088Gyro::Odr odr)
 {
   if (_useSPI) {
     // setting CS pin to output
@@ -1240,7 +1240,7 @@ int Bmi088Gyro::begin()
   softReset();
   delay(50);
   /* set default range */
-  if (!setRange(RANGE_2000DPS)) {
+  if (!setRange(range)) {
     return -2;
   }
   /* enable data ready int */
