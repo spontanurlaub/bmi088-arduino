@@ -72,7 +72,7 @@ class Bmi088Accel {
     };
     Bmi088Accel(TwoWire &bus,uint8_t address);
     Bmi088Accel(SPIClass &bus,uint8_t csPin);
-    int begin(Bmi088Accel::Range range = RANGE_24G, Bmi088Accel::Odr odr = ODR_1600HZ_BW_280HZ);
+    int begin(Bmi088Accel::Range range = Bmi088Accel::Range::RANGE_24G, Bmi088Accel::Odr odr = Bmi088Accel::Odr::ODR_1600HZ_BW_280HZ);
     bool setOdr(Odr odr);
     bool setRange(Range range);
     bool pinModeInt1(PinMode mode, PinLevel level);
