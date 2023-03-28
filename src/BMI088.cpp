@@ -606,7 +606,7 @@ Bmi088Accel::Bmi088Accel(SPIClass &bus,uint8_t csPin)
 }
 
 /* begins communication with the BMI088 accel */
-int Bmi088Accel::begin()
+int Bmi088Accel::begin(Bmi088Accel::Range range = RANGE_24G, Bmi088Accel::Odr odr = ODR_1600HZ_BW_280HZ)
 {
   if (_useSPI) {
     // setting CS pin to output
@@ -650,11 +650,11 @@ int Bmi088Accel::begin()
   } 
   delay(50);
   /* set default range */
-  if (!setRange(RANGE_24G)) {
+  if (!setRange(range)) {
     return -7;
   }
   /* set default ODR */
-  if (!setOdr(ODR_1600HZ_BW_280HZ)) {
+  if (!setOdr(odr)) {
     return -8;
   }
   /* check config errors */
