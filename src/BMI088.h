@@ -81,6 +81,7 @@ class Bmi088Accel {
     bool mapDrdyInt2(bool enable);
     bool getDrdyStatus();
     void readSensor();
+    void readSensorRaw(uint16_t &accel_x, uint16_t &accel_y, uint16_t &accel_z, uint16_t &time);
     float getAccelX_mss();
     float getAccelY_mss();
     float getAccelZ_mss();
@@ -242,6 +243,7 @@ class Bmi088Gyro {
     bool mapDrdyInt4(bool enable);
     bool getDrdyStatus();
     void readSensor();
+    void readSensorRaw(uint16_t &gyro_x, uint16_t &gyro_y, uint16_t &gyro_z);
     float getGyroX_rads();
     float getGyroY_rads();
     float getGyroZ_rads();
@@ -375,6 +377,7 @@ class Bmi088 {
     bool mapSync(SyncPin pin);    
     bool pinModeDrdy(PinMode mode, PinLevel level);
     void readSensor();
+    void readSensorRaw(uint16_t &accel_x, uint16_t &accel_y, uint16_t &accel_z, uint16_t &gyro_x, uint16_t &gyro_y, uint16_t &gyro_z, uint16_t &time);
     float getAccelX_mss();
     float getAccelY_mss();
     float getAccelZ_mss();
