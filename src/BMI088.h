@@ -386,9 +386,9 @@ class Bmi088 {
     float getGyroX_rads();
     float getGyroY_rads();
     float getGyroZ_rads();  
-  private:
     Bmi088Accel *accel;
     Bmi088Gyro *gyro;
+  private:
     uint8_t drdy_pin;
     // constants
     static const uint8_t ACC_DISABLE = 0;
